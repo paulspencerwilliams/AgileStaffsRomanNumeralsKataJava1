@@ -1,9 +1,20 @@
 
 public class NumeralConverter {
     public Integer fromRomanNumeral(String romanNumeral) {
-        if (romanNumeral.equals("I")) {
-            return 1;
+        if (romanNumeral.contains("V")) {
+            return HandleVs(romanNumeral);
         }
-        return 2;
+        return romanNumeral.length();
+    }
+
+    private Integer HandleVs(String romanNumeral) {
+        if (romanNumeral.equals("IV")) {
+            return 4;
+        }
+        return calculateVFollowedByIs(romanNumeral);
+    }
+
+    private int calculateVFollowedByIs(String romanNumeral) {
+        return romanNumeral.length() + 5 - 1;
     }
 }
