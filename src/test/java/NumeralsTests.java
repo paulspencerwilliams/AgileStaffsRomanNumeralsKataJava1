@@ -52,4 +52,18 @@ public class NumeralsTests {
         assertThat(converter.fromRomanNumeral("VIII"), equalTo((Integer)8));
     }
 
+    @Test
+    public void testIXReturns9() {
+        assertThat(converter.fromRomanNumeral("IX"), equalTo((Integer)9));
+    }
+
+    @Test
+    public void testXReturns10() {
+        assertThat(converter.fromRomanNumeral("X"), equalTo((Integer)10));
+    }
+
+    @Test
+    public void testICReturns99() { // I know, I know this is wrong!!
+        assertThat(converter.fromRomanNumeral("IC"), equalTo((Integer)99));
+    }
 }
